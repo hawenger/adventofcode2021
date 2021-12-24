@@ -24,12 +24,16 @@ const diagnosticReport = [
   "00010",
   "01010",
 ];
+let sum = [];
 const diagnosticsMap = new Map();
 //let stringDiagnostics;
 for (let i = 0; i < diagnosticReport.length; i++) {
   let diagnosticString = diagnosticReport[i];
+
   for (let y = 0; y < diagnosticString.length; y++) {
     //if (parseInt(diagnosticString[y], 10) == 0) {
+    let a = parseInt(diagnosticString[y], 10);
+    sum[y] = sum[y] + a;
     diagnosticsMap.set(y, parseInt(diagnosticString[y], 10));
     //console.log(parseInt(diagnosticString[y], 10));
     //} else {
@@ -37,6 +41,7 @@ for (let i = 0; i < diagnosticReport.length; i++) {
     //}
     //console.log(diagnosticString[y]);
   }
+  console.log(sum);
   //for (let key of diagnosticsMap.keys()) {
   // console.log(key);
   //}
