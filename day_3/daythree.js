@@ -35,7 +35,7 @@ for (let [key, value] of dRMap) {
 }
 let gamma = gammaRate.join("");
 let epsi = epsilonRate.join("");
-console.log(parseInt(gamma, 2));
+console.log(parseInt(gamma, 2) * parseInt(epsi, 2));
 
 //Fun Converting Booleans to Ints
 //let q = 1;
