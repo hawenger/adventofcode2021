@@ -36,22 +36,42 @@ for (let [key, value] of dRMap) {
 let gamma = gammaRate.join("");
 let epsi = epsilonRate.join("");
 let a = dRMap.get(1);
+
 //console.log(a);
 //console.log(gammaRate);
+//console.log(parseInt(gamma, 2) * parseInt(epsi, 2));
 
 //PART TWO
 let diagnosticCopy = JSON.parse(JSON.stringify(diagnosticReport));
-console.log(diagnosticCopy);
-for (let i = 0; i < gammaRate.length; i++) {
-  //let x = diagnosticReport[i];
-  //console.log(gammaRate[i]);
-  //let xMap = dRMap.get[i];
-  //console.log(x);
-  //for (let j = 0; j < x.length; j++) {
-  //  //console.log(x[j]);
-  //}
+function find(diagnosticCopy) {
+  let i = 0;
+  if (i < 10) {
+    //diagnosticCopy.length > 0) {
+    loop(diagnosticCopy);
+    i++;
+  }
 }
-//console.log(parseInt(gamma, 2) * parseInt(epsi, 2));
+find(diagnosticCopy);
+function loop(diagnosticCopy) {
+  for (let i = 0; i < gammaRate.length; i++) {
+    let x = gammaRate[i];
+    let a = diagnosticCopy[i];
+    let b = parseInt(a[0], 2);
+    if (b == x) {
+      console.log(b);
+    }
+
+    //for (let j = 0; j < diagnosticCopy.length; j++) {
+    //  let a = diagnosticCopy[j];
+    //  if (diagnosticCopy.length < 2) {
+    //    break;
+    //  }
+    //  parseInt(a[0]);
+    //  //Compare x to parsedInt first letter in j
+    //}
+  }
+  return diagnosticCopy;
+}
 
 //Fun Converting Booleans to Ints
 //let q = 1;
