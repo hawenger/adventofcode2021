@@ -35,9 +35,37 @@ for (let [key, value] of dRMap) {
 }
 let gamma = gammaRate.join("");
 let epsi = epsilonRate.join("");
-console.log(parseInt(gamma, 2) * parseInt(epsi, 2));
+let a = dRMap.get(1);
+//console.log(a);
+//console.log(gammaRate);
+
+//PART TWO
+let diagnosticCopy = JSON.parse(JSON.stringify(diagnosticReport));
+console.log(diagnosticCopy);
+for (let i = 0; i < gammaRate.length; i++) {
+  //let x = diagnosticReport[i];
+  //console.log(gammaRate[i]);
+  //let xMap = dRMap.get[i];
+  //console.log(x);
+  //for (let j = 0; j < x.length; j++) {
+  //  //console.log(x[j]);
+  //}
+}
+//console.log(parseInt(gamma, 2) * parseInt(epsi, 2));
 
 //Fun Converting Booleans to Ints
 //let q = 1;
 //let p = +!q;
 //console.log(p);
+
+//
+//let lifeSupportRating = oxygenGeneratorRating * cO2ScrubberRating;
+
+//Consider first bit of numbers
+//Keep only numbers selected by the bit criteria
+//Discard numbers that do not match the bit criteria
+//Stop if one number left as this is answer
+//Otherwise, repeat the process with the next bit to the right
+
+//determine most common value in the current bit position and keep only values with that number
+//if 0 and 1 are equal, keep only 1 values
