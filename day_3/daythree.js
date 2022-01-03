@@ -88,7 +88,10 @@ while (dRCopyMap.size > 1) {
 console.log(dRCopyMap);
 function itterator(i) {
   for (let binaryString of dRCopyMap.entries()) {
-    let elm = binaryString[1];
+    let elm = binaryString[0];
+    if (dRCopyMap.size < 2) {
+      break;
+    }
     if (parseInt(elm[i]) == gammaRate[i]) {
       dRCopyMap.delete(binaryString[0]);
     }
