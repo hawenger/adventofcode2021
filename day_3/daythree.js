@@ -58,7 +58,8 @@ function loop(diagnosticCopy) {
     let a = diagnosticCopy[i];
     let b = parseInt(a[0], 2);
     if (b == x) {
-      console.log(b);
+      //console.log(b);
+      // console.log(x);
     }
 
     //for (let j = 0; j < diagnosticCopy.length; j++) {
@@ -71,6 +72,27 @@ function loop(diagnosticCopy) {
     //}
   }
   return diagnosticCopy;
+}
+const dRCopyMap = new Map();
+diagnosticCopy.forEach((element) => {
+  if (parseInt(element[0]) == gammaRate[0]) {
+    dRCopyMap.set(element, parseInt(element[0]));
+  }
+});
+let i = 1;
+while (dRCopyMap.size > 1) {
+  console.log(dRCopyMap);
+  itterator(i);
+  i++;
+}
+console.log(dRCopyMap);
+function itterator(i) {
+  for (let binaryString of dRCopyMap.entries()) {
+    let elm = binaryString[1];
+    if (parseInt(elm[i]) == gammaRate[i]) {
+      dRCopyMap.delete(binaryString[0]);
+    }
+  }
 }
 
 //Fun Converting Booleans to Ints
