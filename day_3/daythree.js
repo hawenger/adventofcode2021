@@ -37,59 +37,31 @@ let gamma = gammaRate.join("");
 let epsi = epsilonRate.join("");
 let a = dRMap.get(1);
 
-//console.log(a);
-//console.log(gammaRate);
-//console.log(parseInt(gamma, 2) * parseInt(epsi, 2));
+console.log("Power Consumption: " + parseInt(gamma, 2) * parseInt(epsi, 2));
 
 //PART TWO
 let diagnosticCopy = JSON.parse(JSON.stringify(diagnosticReport));
-function find(diagnosticCopy) {
-  let i = 0;
-  if (i < 10) {
-    //diagnosticCopy.length > 0) {
-    loop(diagnosticCopy);
-    i++;
-  }
-}
-find(diagnosticCopy);
-function loop(diagnosticCopy) {
-  for (let i = 0; i < gammaRate.length; i++) {
-    let x = gammaRate[i];
-    let a = diagnosticCopy[i];
-    let b = parseInt(a[0], 2);
-    if (b == x) {
-      //console.log(b);
-      // console.log(x);
-    }
 
-    //for (let j = 0; j < diagnosticCopy.length; j++) {
-    //  let a = diagnosticCopy[j];
-    //  if (diagnosticCopy.length < 2) {
-    //    break;
-    //  }
-    //  parseInt(a[0]);
-    //  //Compare x to parsedInt first letter in j
-    //}
-  }
-  return diagnosticCopy;
-}
+// Oxygen Generator Rating
 const dRCopyMap = new Map();
 diagnosticCopy.forEach((element) => {
   if (parseInt(element[0]) == gammaRate[0]) {
     dRCopyMap.set(element, parseInt(element[0]));
   }
 });
+let oxygenGeneratorRating;
 let i = 1;
 while (dRCopyMap.size > 1) {
-  console.log(dRCopyMap);
   itterator(i);
   i++;
 }
-console.log(dRCopyMap);
+console.log("Oxygen Generator Rating: " + oxygenGeneratorRating);
+
 function itterator(i) {
   for (let binaryString of dRCopyMap.entries()) {
     let elm = binaryString[0];
     if (dRCopyMap.size < 2) {
+      oxygenGeneratorRating = parseInt(elm, 2);
       break;
     }
     if (parseInt(elm[i]) == gammaRate[i]) {
